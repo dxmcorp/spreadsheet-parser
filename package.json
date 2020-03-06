@@ -1,6 +1,6 @@
 {
   "name": "@dxmcorp/spreadsheet-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "google spreadsheet parser",
   "main": "src/main.js",
   "scripts": {
