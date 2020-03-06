@@ -26,15 +26,6 @@ const options = {
   encoding: 'utf-8'
 };
 
-function writeJson(output, content, encoding='utf-8') {
-  const fs = require('fs');
-  const path = require('path');
-  fs.writeFile(path.resolve(__dirname, output), content, encoding, (err) => {
-    if (err)
-      throw new Error(err);
-  })
-}
-
 console.log('spreadsheet downloading...');
 
 parser.parseSpreadsheet(spreadsheetId, spreadsheetIndex,function (err, data) {
@@ -46,7 +37,7 @@ parser.parseSpreadsheet(spreadsheetId, spreadsheetIndex,function (err, data) {
     let parsed = parser.parseLocale(data, options);
     for (let locale in parsed) {
       let output = `lang/${locale}.json`;
-      writeJson(output, JSON.stringify(parsed[locale], null, 2));
+      parser.writeJson(output, JSON.stringify(parsed[locale], null, 2));
       console.log(`convert to file : "${output}"`);
     }
     console.log('complete!');
