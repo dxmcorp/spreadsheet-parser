@@ -1,0 +1,7 @@
+{
+  "TestKey": "테스트 키",
+  "Group": {
+    "login": "로그인",
+    "confirm": "확인"
+  }
+}

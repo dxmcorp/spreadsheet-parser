@@ -1,0 +1,21 @@
+{
+  "name": "@dxmcorp/spreadsheet-parser",
+  "version": "1.0.1",
+  "description": "google spreadsheet parser",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/test.js"
+  },
+  "keywords": [],
+  "author": "ryo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxmcorp/spreadsheet-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dxmcorp/spreadsheet-parser/issues"
+  },
+  "homepage": "https://github.com/dxmcorp/spreadsheet-parser#readme"
+}
