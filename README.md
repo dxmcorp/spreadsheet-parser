@@ -16,21 +16,37 @@ Group_confirm |  확인     |  Confirm
 ```
 const parser = require('@dxmcorp/spreadsheet-parser');
 
-const spreadsheetId = '1JSwho0T8WUFHcCPuLe6fNS7y31Q_kXhxYExCJWs6l8U';
-cosnt sheedIndex = 1;
+const spreadsheetId = '1aPnMLwzbWkwdHxWIuRGuWKUDXg6sXnBiYHGM-hezIy4';
+const spreadsheetIndex = 1;
+const options = {
+  separator: '_',
+  localeList: ['ko', 'en'],
+  fallbackLocale: 'ko',
+  codeName: 'code',
+  encoding: 'utf-8'
+};
+
+function writeJson(output, content, encoding='utf-8') {
+  const fs = require('fs');
+  const path = require('path');
+  fs.writeFile(path.resolve(__dirname, output), content, encoding, (err) => {
+    if (err)
+      throw new Error(err);
+  })
+}
 
 console.log('spreadsheet downloading...');
 
-parser.parseSpreadsheet(spreadsheetId, sheetIndex, function (err, data) {
+parser.parseSpreadsheet(spreadsheetId, spreadsheetIndex,function (err, data) {
   if (err) {
     console.log(err);
   }
   else if (data) {
     console.log('locale parsing...');
-    let parsed = parser.parseLocale(data. ['en', 'kr']);
+    let parsed = parser.parseLocale(data, options);
     for (let locale in parsed) {
-      let output = `lang/${locale}.json`;
-      parser.writeJson(output, JSON.stringify(parsed[locale], null, 2));
+      let output = `${locale}.json`;
+      writeJson(output, JSON.stringify(parsed[locale], null, 2));
       console.log(`convert to file : "${output}"`);
     }
     console.log('complete!');

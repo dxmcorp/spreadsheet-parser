@@ -1,7 +1,12 @@
-module.exports = (list, separator='_', localeList=['ko', 'en'], fallbackLocale = 'en', encoding='utf-8') => {
+module.exports = (list, options={}) => {
   const fs = require('fs');
   const path = require('path');
 
+  let separator = options.separator || '_';
+  let localeList = options.localeList || ['ko', 'en'];
+  let fallbackLocale = options.fallbackLocale || 'en';
+  let encoding = options.encoding || 'utf-8';
+  let codeName = options.codeName || 'code';
 
   let localeSet = {};
   for (let locale of localeList)
@@ -9,7 +14,7 @@ module.exports = (list, separator='_', localeList=['ko', 'en'], fallbackLocale =
 
   let obj = {};
   for (let o of list) {
-    const splited = o.code.split(separator);
+    const splited = o[codeName].split(separator);
     const key = splited.shift();
     const subKey = splited.join(separator);
     for (let locale of localeList) {
