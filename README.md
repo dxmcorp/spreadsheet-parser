@@ -45,7 +45,7 @@ parser.parseSpreadsheet(spreadsheetId, spreadsheetIndex,function (err, data) {
     console.log('locale parsing...');
     let parsed = parser.parseLocale(data, options);
     for (let locale in parsed) {
-      let output = `${locale}.json`;
+      let output = `lang/${locale}.json`;
       writeJson(output, JSON.stringify(parsed[locale], null, 2));
       console.log(`convert to file : "${output}"`);
     }

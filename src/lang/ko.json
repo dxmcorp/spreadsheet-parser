@@ -1,13 +1,7 @@
 {
-  "OrbitVote": {
-    "PopupError1": "최소 투표 수량은 {amount} {unit} 입니다.",
-    "PopupError2": "투표수량을 입력하세요.",
-    "PopupError3": "숫자만 입력하세요.",
-    "PopupError4": "정확한 투표 수량을 입력하세요.",
-    "PopupError5": "잘못된 입력입니다.",
-    "PopupAmt": "투표할 수량",
-    "PopupTitle": "{name}에게 투표",
-    "PopupTotal": "총",
-    "PopupAvail": "보유수량"
+  "TestKey": "테스트 키",
+  "Group": {
+    "login": "로그인",
+    "confirm": "확인"
   }
 }

@@ -1,13 +1,7 @@
 {
-  "OrbitVote": {
-    "PopupError1": "At least {amount} {unit} each voting.",
-    "PopupError2": "Please enter the number of votes.",
-    "PopupError3": "Please enter numbers only",
-    "PopupError4": "Please enter the correct number",
-    "PopupError5": "Invalid Input",
-    "PopupAmt": "Amount of Vote",
-    "PopupTitle": "Vote for {name}",
-    "PopupTotal": "Total",
-    "PopupAvail": "Available"
+  "TestKey": "Test Key",
+  "Group": {
+    "login": "Log In",
+    "confirm": "Confirm"
   }
 }
